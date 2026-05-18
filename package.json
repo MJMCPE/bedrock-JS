@@ -1,0 +1,23 @@
+{
+  "name": "bedrock-js",
+  "version": "1.0.0",
+  "description": "Automatic Minecraft Bedrock Dedicated Server updater and launcher for Linux and Pterodactyl. © MarkJesterMCPE",
+  "main": "Bedrock.js",
+  "scripts": {
+    "start": "node Bedrock.js"
+  },
+  "keywords": [
+    "minecraft",
+    "bedrock",
+    "bds",
+    "pterodactyl",
+    "server",
+    "nodejs"
+  ],
+  "author": "MarkJesterMCPE",
+  "license": "MIT",
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "axios": "^1.9.0"
+  }
+}
