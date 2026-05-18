@@ -1,1 +1,1 @@
-# bedrock-JS
+# Bedrock-JS
