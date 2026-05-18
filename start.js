@@ -5,7 +5,7 @@ const AdmZip = require('adm-zip');
 const { spawn } = require('child_process');
 
 // --- CONFIGURATION ---
-const API_URL = 'https://mcjarfiles.com/api/get-latest-jar/bedrock/latest/linux';
+const API_URL = 'https://www.minecraft.net/bedrockdedicatedserver/bin-linux/bedrock-server-1.17.40.06.zip';
 const SERVER_DIR = path.join(__dirname, 'bedrock_server');
 const TEMP_ZIP = path.join(__dirname, 'server_update.zip');
 const VERSION_FILE = path.join(SERVER_DIR, 'version_lock.txt');
