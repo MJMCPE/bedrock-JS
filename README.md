@@ -119,7 +119,7 @@ SERVER_PORT=19132 node index.js
 ## Folder Structure
 
 ```text
-project/
+Bedrock-JS/
 ├── index.js
 ├── package.json
 ├── server_update.zip
