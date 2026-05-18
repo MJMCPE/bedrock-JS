@@ -1,3 +1,4 @@
+Markdown
 # BEDROCK.JS
 
 A lightweight Node.js wrapper for running and auto-updating the official Minecraft Bedrock Dedicated Server (BDS) on Linux environments like Pterodactyl Panel.
@@ -38,13 +39,26 @@ These files are preserved during updates:
 
 ### Linux VPS
 
-Install Node.js:
+Install required packages:
 
 ```bash
 apt update && apt upgrade -y
-apt install -y curl unzip
+apt install -y git unzip curl
+```
+
+Install Node.js:
+
+```bash
 curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 apt install -y nodejs
+```
+
+Clone the repository:
+
+```bash
+mkdir bedrockjs
+cd bedrockjs
+git clone https://github.com/MJMCPE/Bedrock-JS.git .
 ```
 
 Check versions:
@@ -62,19 +76,75 @@ npm install
 
 ---
 
-### Pterodactyl Panel
+## Usage
 
-Startup command:
+Start the updater and Bedrock server:
 
 ```bash
 node index.js
 ```
 
-Install dependencies:
+The script will:
+
+1. Check for the latest Bedrock server version
+2. Download updates if needed
+3. Extract server files
+4. Sync ports with Pterodactyl
+5. Launch the Bedrock server
+
+---
+
+## Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| SERVER_PORT | Main Bedrock server port |
+
+Example:
 
 ```bash
-npm install
+SERVER_PORT=19132 node index.js
 ```
+
+---
+
+## Folder Structure
+
+```text
+Bedrock-JS/
+├── index.js
+├── package.json
+├── server_update.zip
+└── bedrock_server/
+    ├── bedrock_server
+    ├── server.properties
+    ├── version_lock.txt
+    └── ...
+```
+
+---
+
+## Auto Update System
+
+The updater checks the latest Bedrock Dedicated Server build using:
+
+```text
+https://mcjarfiles.com/api/get-latest-jar/bedrock/latest/linux
+```
+
+If a new version is detected, it downloads and installs automatically without overwriting protected configs.
+
+---
+
+## Graceful Shutdown
+
+Supports Pterodactyl STOP button using SIGTERM.
+
+---
+
+## License
+
+MIT License```
 
 Or manually:
 
